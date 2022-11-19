@@ -7,8 +7,8 @@ docker run -v $(pwd)/reports:/var/reports onvio/ffuf-docker https://example.org
 ```
   
 Example targets:
-* https://ffuf.io.fi
-* https://example.org
+- https://ffuf.io.fi
+- https://example.org
 
 ## Building
 ```
@@ -17,6 +17,21 @@ cd ffuf-docker
 docker build -t ffuf-docker .
 docker run -v $(pwd)/reports:/var/reports ffuf-docker https://example.org
 ```
+
+## Change wordlist
+- Update Dockerfile to point to different wordlist and rebuild image
+
+## Additional arguments
+- Add to end of command as follows:   
+`docker run -v $(pwd)/reports:/var/reports ffuf-docker https://example.org -mc 200 -fs 350`
+
+## Headers
+- The following headers are added in the `start.sh` script
+    ```
+    -H "X-Scanner: FFUF" \
+    -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0" \
+    ```
+- Update, add, or delete headers as needed
 
 ## Outputs
 Outputs will be saved in ./reports

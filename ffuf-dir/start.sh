@@ -16,14 +16,14 @@ fi
 set -x
 
 # Scan
+output_filename="/var/reports/ffuf_scan_$(date +"%FT%H%M")"
 ffuf -w words_and_files_top5000.txt \
     -u $target \
     -H "X-Scanner: FFUF" \
     -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0" \
     -of all \
-    -o /var/reports/ffuf_scan \
+    -o ${output_filename} \
     -ac \
-    -mc 200 \
     ${@:2}
 
 # Parse the report

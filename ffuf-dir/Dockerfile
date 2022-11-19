@@ -4,10 +4,10 @@ COPY start.sh ffuf_qt.py /opt/ffuf/
 
 RUN apk --no-cache add git \
     && export GO111MODULE=on \
-    && go install github.com/ffuf/ffuf@v1.5.0 \
+    && go install github.com/ffuf/ffuf@latest \
     && ln -s /go/bin/ffuf /usr/bin/ffuf \
     && cd /opt/ffuf \
-    && wget https://raw.githubusercontent.com/onvio/wordlists/master/words_and_files_top5000.txt \
+    && wget https://raw.githubusercontent.com/sttuartt/wordlists/main/words_and_files_top5000.txt \
     && apk update \
     && apk --no-cache add bash python3 ca-certificates \
     && chmod +x /opt/ffuf/start.sh
