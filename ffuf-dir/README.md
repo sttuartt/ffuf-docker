@@ -1,4 +1,4 @@
-# ffuf-docker
+# ffuf-dir
 Oneliner to run ffuf scan against target URL using a good wordlist
 
 ## Running
@@ -12,10 +12,10 @@ Example targets:
 
 ## Building
 ```
-git clone git@github.com:onvio/ffuf-docker.git
-cd ffuf-docker
-docker build -t ffuf-docker .
-docker run -v $(pwd)/reports:/var/reports ffuf-docker https://example.org
+git clone git@github.com:sttuartt/ffuf-docker.git
+cd ffuf-dir
+docker build -t ffuf-dir .
+docker run -v $(pwd)/reports:/var/reports ffuf-dir https://example.org
 ```
 
 ## Change wordlist
