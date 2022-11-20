@@ -46,13 +46,13 @@ docker build -t ffuf-generic .
 `docker run -v ~/reports:/var/reports -v $(pwd):/opt/ffuf/wordlists sttuartt/ffuf-generic -u https://example.org -w wordlists/<list name> -mc 200 -fw 70 -fs 351`
 
 ## Headers
-- There are no headers included by default - these must be provided as part of the arguments:
+- There are no headers included by default - these must be provided as part of the arguments:  
 `docker run -v ~/reports:/var/reports -v $(pwd):/opt/ffuf/wordlists sttuartt/ffuf-generic -u https://example.org -w wordlists/<list name> -mc 200 -fw 70 -fs 351 -H "X-Scanner: FFUF" -H "User-Agent: ..."`
 
 ## Outputs
 Outputs will be saved in the location specified in the `volume` argument provided - e.g. `~/reports`
   
-| Report               | Description                                             |
-|----------------------|---------------------------------------------------------|
-| ffuf_scan.csv        | Full ffuf report in csv                                 |
-| fuff.json            | JSON report for with Generic JSON warnings              |
+| Report | Description |
+|---|---|
+| ffuf_scan_\<timestamp\>.csv | Full ffuf report in csv |
+| fuff_vulnerabilities_\<timestamp\>.json | JSON report for with Generic JSON warnings |
