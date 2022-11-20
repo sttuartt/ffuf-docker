@@ -1,5 +1,5 @@
 # ffuf-generic
-Oneliner to run ffuf scan against target URL using a good wordlist
+Run ffuf via docker.
 
 This is akin to simply running `ffuf` at the command line - without having to actually install ffuf.  
 All options need to be provided as arguments:
