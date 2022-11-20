@@ -41,9 +41,12 @@ docker build -t ffuf-generic .
 ## Change wordlist
 - The wordlist is **not** built into the image - this must be provided as part of the arguments - see [Running](#running) above
 
+## Automatic filtering
+- This is the option provided by `-ac` - this is **not** on by default in this image, and must be added via an argument 
+
 ## Additional arguments
 - Add to end of command as follows:   
-`docker run -v ~/reports:/var/reports -v $(pwd):/opt/ffuf/wordlists sttuartt/ffuf-generic -u https://example.org -w wordlists/<list name> -mc 200 -fw 70 -fs 351`
+`docker run -v ~/reports:/var/reports -v $(pwd):/opt/ffuf/wordlists sttuartt/ffuf-generic -u https://example.org -w wordlists/<list name> -mc 200 -fw 70 -fs 351 -ac`
 
 ## Headers
 - There are no headers included by default - these must be provided as part of the arguments:  

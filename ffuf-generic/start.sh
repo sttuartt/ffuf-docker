@@ -6,7 +6,6 @@ ls -l
 output_filename="/var/reports/ffuf_scan_$(date +"%FT%H%M")"
 ffuf -of all \
     -o ${output_filename} \
-    -ac \
     ${@:1}
 
 # Parse the report
